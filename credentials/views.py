@@ -1,4 +1,8 @@
-from urllib.parse import urljoin
+# Compatible with Python2 and Python3
+try:
+    from urllib.parse import urljoin # Python3
+except ImportError:
+    from urlparse import urljoin # Python2
 
 from django.views.generic.base import RedirectView
 

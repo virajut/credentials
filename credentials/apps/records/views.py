@@ -3,7 +3,13 @@ import datetime
 import io
 import json
 import logging
-import urllib.parse
+
+# Compatible to Python2.x and Python3.x
+try:
+    from urllib.parse import urlparse # Python3
+except ImportError:
+    from urlparse import urlpase     # Python2
+
 from collections import defaultdict
 
 from analytics.client import Client as SegmentClient
